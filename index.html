@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delivery Exception Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Delivery Exception Dashboard </h1>
+    <h4 style="text-align: right;">By Vachan J Poojary</h4>
+
+    <!-- FORM -->
+    <div class="card">
+
+        <h2>Report Delivery Issue</h2>
+
+        <form id="exceptionForm">
+
+            <input
+                type="text"
+                id="deliveryId"
+                placeholder="Delivery ID"
+            >
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Customer Name"
+            >
+
+            <select id="issueType">
+                <option value="">Select Issue</option>
+                <option>Address Not Found</option>
+                <option>Customer Not Available</option>
+                <option>Payment Issue</option>
+                <option>Package Damaged</option>
+            </select>
+
+            <div class="priority">
+
+                <label>
+                    <input type="radio" name="priority" value="Low">
+                    Low
+                </label>
+
+                <label>
+                    <input type="radio" name="priority" value="Medium">
+                    Medium
+                </label>
+
+                <label>
+                    <input type="radio" name="priority" value="High">
+                    High
+                </label>
+
+            </div>
+
+            <textarea
+                id="notes"
+                placeholder="Notes">
+            </textarea>
+
+            <button type="submit">
+                Submit
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- FILTERS -->
+
+    <div class="card">
+
+        <h2>Filters</h2>
+
+        <select id="filterIssue">
+            <option value="All">All Issues</option>
+            <option>Address Not Found</option>
+            <option>Customer Not Available</option>
+            <option>Payment Issue</option>
+            <option>Package Damaged</option>
+        </select>
+
+        <select id="filterStatus">
+            <option value="All">All Status</option>
+            <option>Open</option>
+            <option>Resolved</option>
+        </select>
+
+    </div>
+
+    <!-- COUNTS -->
+
+    <div class="stats">
+
+        <div class="box">
+            Open:
+            <span id="openCount">0</span>
+        </div>
+
+        <div class="box">
+            Resolved:
+            <span id="resolvedCount">0</span>
+        </div>
+
+    </div>
+
+    <!-- TABLE -->
+
+    <table>
+
+        <thead>
+
+        <tr>
+            <th>Delivery ID</th>
+            <th>Customer</th>
+            <th>Issue</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+
+        </thead>
+
+        <tbody id="tableBody">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
